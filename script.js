@@ -212,3 +212,10 @@ searchBtn.addEventListener("click", async () => {
 popupClose.addEventListener("click", () => {
   mealPopup.classList.add("hidden");
 });
+
+if ("servicWorker" in navigator) {
+  navigator.serviceWorker
+    .register("./sw.js")
+    .then((reg) => console.log("Registro de SW exitoso"))
+    .catch((err) => console.warn("Error al tratar de 	registrar el sw", err));
+}
